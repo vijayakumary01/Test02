@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- none
+- dev
 
 
 stages:
@@ -27,7 +27,7 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: 'Packaging'
-  condition: "and(succeeded(), eq(variables['Build.Reason'], 'refs/tags/release.*'))"
+  condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
