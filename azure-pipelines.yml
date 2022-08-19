@@ -5,9 +5,16 @@
 
 
 trigger:
-  branches: 
-    include:
-      - refs/tags/release.*
+- dev
+
+resources:
+  repositories:
+  - repository: Test02
+    type: github
+    trigger:
+     tags:
+        include:
+          - relese.*
 
 
 
