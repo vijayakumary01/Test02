@@ -23,6 +23,7 @@ stages:
     steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
+      enabled: false
 
     - script: |
         echo Add other tasks to build, test, and deploy your project.
