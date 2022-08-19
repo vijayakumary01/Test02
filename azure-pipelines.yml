@@ -4,9 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
- tags:
-   include:
-     - release.*
+- main
 pr:
  branches:
    include:
