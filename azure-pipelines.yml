@@ -25,6 +25,7 @@ stages:
         echo See https://aka.ms/yaml
       displayName: 'Run a multi-line script'
 
+
 - stage: 'Packaging'
   condition: "in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/tags/release.*')"
   pool:
