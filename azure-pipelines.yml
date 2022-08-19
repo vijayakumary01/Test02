@@ -27,7 +27,7 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: 'Packaging'
-  condition: and(always())
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'))
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
