@@ -5,9 +5,9 @@
 
 
 trigger:
- tags:
-   include:
-     - release.*
+  branches: 
+    include:
+      - refs/tags/release.*
 
 
 
