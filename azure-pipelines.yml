@@ -30,7 +30,7 @@ stages:
 
 
 - stage: 'Packaging'
-  condition: "in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/tags/release.*')"
+  condition: "and(succeeded(), eq(variables['Build.Reason'], 'refs/tags/release.*'))"
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
