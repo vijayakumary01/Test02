@@ -8,7 +8,6 @@ trigger:
    include:
      - release.*
 
-
 stages:
 - stage: 'checker'
   condition: "and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))"
@@ -16,6 +15,21 @@ stages:
     vmImage: 'ubuntu-latest'
   jobs:
   - job: 'checker_account'
+
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+      displayName: 'Run a multi-line script'
+
+- stage: 'Packaging'
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  - job: 'Packaging_account'
 
     steps:
     - script: echo Hello, world!
