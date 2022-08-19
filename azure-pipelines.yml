@@ -11,6 +11,21 @@ pr:
      - main
 
 stages:
+- stage: 'Packaging'
+  condition: "and(succeeded(), eq(variables['Build.Reason'], 'refs/tags/release.*'))"
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  - job: 'Packaging_account'
+
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+      displayName: 'Run a multi-line script'
 - stage: 'checker'
   condition: "and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))"
   pool:
@@ -29,18 +44,4 @@ stages:
       displayName: 'Run a multi-line script'
 
 
-- stage: 'Packaging'
-  condition: "and(succeeded(), eq(variables['Build.Reason'], 'refs/tags/release.*'))"
-  pool:
-    vmImage: 'ubuntu-latest'
-  jobs:
-  - job: 'Packaging_account'
 
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-      displayName: 'Run a multi-line script'
