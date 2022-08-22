@@ -5,6 +5,7 @@ resources:
   repositories:
   - repository: Test02
     type: github
+    name: Test02
     trigger:
      tags:
         include:
