@@ -5,7 +5,7 @@
 
 
 trigger:
-- dev
+- none
 
 resources:
   repositories:
