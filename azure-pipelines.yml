@@ -5,7 +5,7 @@
 
 
 trigger:
-- none
+- dev
 
 resources:
   repositories:
@@ -15,9 +15,6 @@ resources:
      tags:
         include:
           - relese.*
-
-
-
 
 
 stages:
@@ -40,8 +37,8 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: 'Packaging'
-  condition: always()
-#  condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
+#  condition: always()
+  condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
