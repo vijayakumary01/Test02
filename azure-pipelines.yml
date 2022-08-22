@@ -39,8 +39,9 @@ stages:
 
 - stage: 'Packaging'
   dependsOn: checker
-  condition: always()
+#  condition: always()
 #  condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
+  condition: and(contains(variables['build.sourceBranch'], 'refs/heads/dev'), succeeded())
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
