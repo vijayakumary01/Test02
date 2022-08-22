@@ -7,14 +7,14 @@
 trigger:
 - dev
 
-#resources:
-#  repositories:
-#  - repository: Test02
-#    type: github
-#    trigger:
-#     tags:
-#        include:
-#          - relese.*
+resources:
+  repositories:
+  - repository: Test02
+    type: github
+    trigger:
+     tags:
+        include:
+          - relese.*
 
 
 
