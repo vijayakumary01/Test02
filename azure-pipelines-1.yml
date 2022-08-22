@@ -1,15 +1,12 @@
-trigger:
-- main
 
-resources:
-  repositories:
-  - repository: Test02
-    type: github
-    name: Test02
-    trigger:
-     tags:
-        include:
-          - relese.*
+trigger:
+ branches:
+  include:
+    - main
+    - dev
+ tags:
+   include:
+     - release.*
 stages:
 - stage: Stage1
   displayName: Stage 1
