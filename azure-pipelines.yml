@@ -39,8 +39,8 @@ stages:
 
 - stage: 'Packaging'
   dependsOn: checker
-#  condition: always()
-  condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
+  condition: always()
+#  condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
@@ -54,5 +54,3 @@ stages:
         echo Add other tasks to build, test, and deploy your project.
         echo See https://aka.ms/yaml
       displayName: 'Run a multi-line script'
-
-
