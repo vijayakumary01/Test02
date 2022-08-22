@@ -37,6 +37,7 @@ stages:
       displayName: 'Run a multi-line script'
 
 - stage: 'Packaging'
+  dependsOn: checker
 #  condition: always()
   condition: "in(variables['Build.SourceBranch'], 'refs/heads/dev')"
   pool:
