@@ -20,6 +20,7 @@ resources:
 stages:
 
 - stage: 'checker'
+  displayName: checker
   condition: "and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))"
   pool:
     vmImage: 'ubuntu-latest'
